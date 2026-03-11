@@ -18,7 +18,13 @@ Para este proyecto se trabajará con cinco palabras específicas provenientes de
 - mudir
 - mushtamal
 
-## DFA
+**Alfabeto resultante:**
+
+<img width="260" height="34" alt="image" src="https://github.com/user-attachments/assets/39725b03-8318-431c-ab27-165805cda941" />
+
+
+## Modelos 
+### DFA
 
 En computación existen diferentes tipos de autómatas, cada uno con características que los hacen especiales, sin embargo en esta ocasión nos enfocaremos solamente en el Deterministic Finite Automata (DFA) o en español Autómata Finito Determinista (AFD).
 De acuerdo con Hopcroft, Motwani y Ullman (2008),un autómata finito determinista es un modelo matemático utilizado para reconocer lenguajes formales cuya propiedad más importante es que, tras leer una secuencia de símbolos de entrada, el sistema solo puede encontrarse en un único estado, se denomina como determinista porque, para cada símbolo que es recibido, existe solamente una única transición posible hacia el siguiente estado.
@@ -52,7 +58,7 @@ En pocas palabras:
 
 "***A*** es el nombre del AFD, ***Q*** es su conjunto de estados, ***Σ*** son los símbolos de entrada,***δ*** es la función de transición, ***qo*** es el estado inicial y ***F*** es el conjunto de estados finales"(Hopcroft, Motwani, & Ullman, 2008).
 
-### Construcción de mi DFA
+#### Construcción de mi DFA
 
 Para comenzar con el modelado del autómata, primero analicé las palabras asignadas con el objetivo de identificar los prefijos comunes entre ellas. A partir de este análisis se observó que varias de las palabras compartían las letras iniciales m y u, como se muestra a continuación:
 
@@ -69,6 +75,33 @@ Al finalizar este proceso, el autómata resultante fue el siguiente:
 
 <img width="2688" height="1038" alt="DFA drawio" src="https://github.com/user-attachments/assets/1319cdfd-98f6-4fd4-bca5-476c74788e35" />
 
+**Tabla de transiciones:**
+
+
+![DFA drawio 2](https://github.com/user-attachments/assets/00c8155f-ecf3-44d8-9237-45291b9a5948)
+
+### Expresión Regular
+Una vez completado el diseño del autómata, se puede proceder al siguiente paso de esta evidencia, el cual consiste en describir el mismo lenguaje utilizando una representación alternativa: las expresiones regulares.
+
+Las expresiones regulares son una herramienta utilizada para definir patrones dentro de un conjunto de cadenas. Estas tienen aplicaciones importantes en áreas como la búsqueda de texto o el desarrollo de compiladores, además, tienen una relación directa con los autómatas finitos, ya que ambos permiten describir exactamente el mismo tipo de lenguajes, conocidos como lenguajes regulares, sin embargo, a diferencia de los autómatas, las expresiones regulares permiten especificar de manera declarativa las cadenas que se desean aceptar, por lo que son ampliamente utilizadas como mecanismo de entrada en diversos sistemas que procesan de texto (Hopcroft, Motwani, & Ullman, 2008).
+
+Para construir la expresión regular seguí un proceso similar al utilizado durante el diseño del autómata, identificando primero los caracteres comunes entre las palabras del lenguaje, en este caso observé que todas las palabras comienzan con el carácter m, por lo que la expresión regular inicia con este símbolo. Posteriormente, se identificaron dos posibles continuaciones después de este primer carácter: la palabra misr y las palabras que comienzan con mu. Para poder representar estas dos posibilidades se utilizó el operador de ***OR ( | )***, el cual permite indicar diferentes opciones dentro de una expresión regular. Para las palabras que comienzan con mu, se agruparon las diferentes terminaciones posibles: 'addib, ad'dib, dir y shtamal. Estas opciones se incluyeron dentro de un mismo grupo utilizando nuevamente el operador ***"|"***. Para finalizar, añadí los símbolos ***^*** al inicio de la expresión y ***$*** al final. El primero indica que la cadena debe comenzar con el patrón especificado (m), mientras que el segundo señala que la cadena debe terminar en ese punto, es decir, finaliza en el momento que detecte la última letra de cada palabra aceptada, sin continuar leyendo más allá. Esto permitió garantizar que únicamente se acepten las cinco palabras asignadas y no cadenas similares, como misrr, que contiene una letra adicional al final.
+
+De esta manera se obtuvo la expresión regular:
+
+**^m(isr | u('addib | ad'dib | dir | shtamal))$**
+
+Al probarla con una página web de expresiones regulares proporcionada por nuestro profesor, comprobamos que en efecto solo recibe estas 5 palabras y rechaza todas las demás:
+
+<img width="96" height="658" alt="image" src="https://github.com/user-attachments/assets/98e7130b-e71a-4a47-a064-04e0e597d76d" />
+
+## Implementación
+
+
+## Pruebas
+
+
+## Análisis
 
 
 
