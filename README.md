@@ -54,6 +54,19 @@ En pocas palabras:
 
 ### Construcción de mi DFA
 
+Para comenzar con el modelado del autómata, primero analicé las palabras asignadas con el objetivo de identificar los prefijos comunes entre ellas. A partir de este análisis se observó que varias de las palabras compartían las letras iniciales m y u, como se muestra a continuación:
+
+- **mu**'addib
+- **mu**ad'dib
+- **mu**dir
+- **mu**shtamal
+- misr
+
+Debido a que la palabra misr no comparte este mismo prefijo, decidí dejarla de lado y enfocarme primero en las palabras que sí coincidían en sus caracteres iniciales. Posteriormente, tomé la palabra con mayor número de caracteres que compartiera este prefijo como base para establecer el camino principal del autómata. En este caso, la palabra seleccionada fue mushtamal, la cual cuenta con un total de nueve caracteres. A partir de este camino inicial se comenzó a diseñar el autómata, generando posteriormente las distintas ramas necesarias conforme las demás palabras empezaban a diferenciarse en sus caracteres, hasta completar la representación de las cinco palabras que me fuerron asignadas.Finalmente, se modelaron las transiciones correspondientes a todos aquellos caracteres que no conducían a la formación de alguna de las palabras válidas, dirigiéndolos hacia un estado trampa, cuyo propósito es indica el rechazo de la cadena; este comportamiento puede entenderse como una configuración muerta, es decir, una situación en la que el autómata deja de avanzar al no existir una transición válida para continuar procesando la cadena (Linz & Rodger, 2022).Desde mi punto de vista esta fue la etapa que requirió más tiempo y especial cuidado, ya que fue necesario verificar detalladamente que cada estado incluyera todos los símbolos que el lenguaje no debía aceptar, evitando al mismo tiempo redirigir caracteres que sí formaban parte de las transiciones válidas.
+
+Al finalizar este proceso, el autómata resultante fue el siguiente:
+
+
 <img width="2688" height="1038" alt="DFA drawio" src="https://github.com/user-attachments/assets/1319cdfd-98f6-4fd4-bca5-476c74788e35" />
 
 
