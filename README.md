@@ -96,7 +96,52 @@ Al probarla con una página web de expresiones regulares proporcionada por nuest
 <img width="96" height="658" alt="image" src="https://github.com/user-attachments/assets/98e7130b-e71a-4a47-a064-04e0e597d76d" />
 
 ## Implementación
+Para la implementación del análisis léxico decidí utilizar el DFA, cuyo funcionamiento fue comprobado mediante un programa escrito en Prolog, el cual es el lenguaje de programación que se ha utilizado a lo largo del curso. A través de este programa se implementaron las transiciones del autómata y se realizaron pruebas con diferentes cadenas para verificar que el DFA aceptara únicamente las palabras válidas del lenguaje y rechazara aquellas que no pertenecieran a él.
 
+Para crear este progrma se usó como base la siguiente estructura vista previamente en clase:
+
+Esta código proporciona la forma general de representar un autómata finito en Prolog, definiendo las transiciones con "move", los estados de aceptación con "accepting_state" y un predicado principal que se encarga de recorrer la lista de símbolos de entrada, simulando así el comportamiento del autómata.
+
+<img width="215" height="177" alt="Screenshot 2026-03-11 at 7 17 59 p m" src="https://github.com/user-attachments/assets/01b41520-68c0-480e-854c-bf6b0b4b7422" />
+
+<img width="392" height="224" alt="Screenshot 2026-03-11 at 7 18 07 p m" src="https://github.com/user-attachments/assets/59c94053-8c39-4ec4-9a26-70e66090d013" />
+
+Gracias a esto, la creación del código fue relativamente fácil, solo quedó que adaptarlo a mi autómata, lo cual resultó un poco laborioso debido a la gran cantidad de transiciones presentes, tomando en consideración que en Prolog cada transición debe declararse de forma individual.
+
+Para ejecutar el programa se deben seguir las siguientes instrucciones:
+
+- **1. Abrir SWI-Prolog**
+  - Abre SWI-Prolog en la computadora.
+
+- **2. Cargar el archivo**
+  - Una vez abierto Prolog, se debe cargar el archivo que contiene la implementación del autómata:
+    - ['Evidencia 1 - DFA Dune'].
+  - Si el archivo se carga correctamente, Prolog mostrará 'true'.
+- **3. Ejecutar la función**
+  - Después de cargar el archivo, el autómata se prueba utilizando el predicado:
+    - parseDFA([tu_input]).
+  - Por ejemplo:
+    - parseDFA([m,u,s,h,t,a,m,a,l]).
+  - **Nota:**
+    - En el caso del símbolo **' (comilla simple)**, es necesario escribirlo de la siguiente manera: <img width="28" height="30" alt="image" src="https://github.com/user-attachments/assets/311af125-e351-4601-8f2d-29fc721923fb" />
+
+    - Por ejemplo, para poder probar una cadena que contenga este símbolo se debe escribir de esta forma: <img width="300" height="100" alt="image" src="https://github.com/user-attachments/assets/5a19f006-39b2-49b1-b507-68031e78f6f7" />
+
+
+Cada elemento de la lista representará un carácter de la cadena que se quiere analizar. El programa los evaluará siguiendo las transiciones ya definidas en el autómata y decidirá si pertenece o no al lenguaje.
+Una vez que concluya el análisis, si es aceptado se mostrará:
+
+  parseDFA([m,u,d,i,r]).
+
+    Accepted
+    true.
+
+o en caso de rechazo:
+
+  parseDFA([m,u,s,h,t,a,m,a]).
+
+    Rejected
+    true.
 
 ## Pruebas
 
