@@ -1,0 +1,37 @@
+:- consult('Evidencia 1 - DFA Dune').
+
+run_dune_tests :-
+
+    write('--- Cadenas aceptadas ---'), nl,
+    parseDFA([m,i,s,r]),
+    parseDFA([m,u,'\'',a,d,d,i,b]),
+    parseDFA([m,u,a,d,'\'',d,i,b]),
+    parseDFA([m,u,d,i,r]),
+    parseDFA([m,u,s,h,t,a,m,a,l]),
+
+    write('--- Cadenas rechazadas ---'), nl,
+    parseDFA([m,i,s]),
+    parseDFA([m,i,s,a]),
+    parseDFA([m,i,s,r,r]),
+    parseDFA([m,i,r]),
+    parseDFA([m,s,r]),
+    parseDFA([m,u,d]),
+    parseDFA([m,u,d,i]),
+    parseDFA([m,u,d,i,r,r]),
+    parseDFA([m,u,i,r]),
+    parseDFA([m,u,d,u,r]),
+    parseDFA([m,u,s,h,t,a]),
+    parseDFA([m,u,s,h,t,a,m,a]),
+    parseDFA([m,u,s,h,t,a,m,a,l,a]),
+    parseDFA([m,u,s,h,a,m,a,l]),
+    parseDFA([m,u,s,h,t,m,a,l]),
+    parseDFA([m,u,'\'',a,d,d,i]),
+    parseDFA([m,u,'\'',a,d,d,i,b,a]),
+    parseDFA([m,u,'\'',a,d,i,b]),
+    parseDFA([m,u,'\'',a,d,d,b,b]),
+    parseDFA([m,u,a,d,d,i,b]),
+    parseDFA([m,u,a,d,'\'',d,i]),
+    parseDFA([m,u,a,d,'\'',d,i,b,a]),
+    parseDFA([m,u,a,d,'\'',d,b,b]),
+    parseDFA([m,u,a,d,d,i,b]),
+    parseDFA([m,u,a,d,'\'',d,b]).
