@@ -144,9 +144,30 @@ o en caso de rechazo:
     true.
 
 ## Pruebas
+Estas son las palabras que probaremos en el archivo "test_automataDune.pl" :
 
+<img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/1c5976ec-4329-437b-a790-45e737acd72a" />
+
+<img width="600" height="1200" alt="image" src="https://github.com/user-attachments/assets/0cf7f78e-427f-4363-9b51-37fbecac1e94" />
+
+**Como ejecutar el programa**
+
+Para realizar el script de pruebas se utilizó SWI-Prolog y son las mismas que las presentadas en las tablas anteriores.
+
+Los pasos para correr el programa son los siguientes:
+
+Una vez cargado el programa principal, como se explicó en la sección anterior, se puede ejecutar el script.
+
+**1. Cargar el archivo de pruebas:**
+  [test_automataDune.pl]
+**2. Ejecutar el script de pruebas:**
+  Escribir: *run_dune_tests.*
+  Este comando ejecutará el script con las múltiples pruebas utilizando cadenas aceptadas y rechazadas.
+
+El programa mostrará en la consola si cada cadena es Accepted o Rejected, lo cual nos permite verificar que el autómata funciona reconociendo correctamente el lenguaje definido.
 
 ## Análisis
+
 
 
 
