@@ -169,14 +169,41 @@ Una vez cargado el programa principal, como se explicó en la sección anterior,
 El programa mostrará en la consola si cada cadena es Accepted o Rejected, lo cual nos permite verificar que el autómata funciona reconociendo correctamente el lenguaje definido.
 
 ## Análisis
-Esta última parte de la evidencia se enfocará en analizar el DFA construido y así poder determinar su complejidad temporal asintótica, para después compararla contra soluciones alternativas y explicar sus diferencias.
+
+Esta última parte de la evidencia se enfocará en analizar el DFA construido y así poder determinar su complejidad temporal asintótica, para después compararla contra soluciones alternativas explicando sus diferencias.
+
+#### Complejidad temporal asintótica
 
 Para definir la complejidad de mi autómata me basaré en la Jerarquía de Chomsky.
 
 Linz y Rodger (2022) explican en su libro "An Introduction to Formal Languages and Automata" que Noam Chomsky, considerado uno de los fundadores de la teoría de lenguajes formales, propuso una clasificación inicial de los lenguajes en cuatro tipos, numerados del 0 al 3, terminología que se ha mantenido a lo largo del tiempo y sigue utilizándose con frecuencia.
 En su jerrarquía los lenguajes de tipo 0 son aquellos generados por gramáticas irrestrictas, también conocidos como lenguajes recursivamente enumerables, el tipo 1 corresponde a los lenguajes sensibles al contexto, el tipo 2 a los lenguajes libres de contexto y el tipo 3 a los lenguajes regulares.
 
+<img src="https://github.com/user-attachments/assets/3b92a8bd-596d-4b72-86ae-9a72c354182a" width="400">
 
+Figura 1. Jerarquía de Chomsky.
+Tomado de "An Introduction to Formal Languages and Automata" (Linz & Rodger, 2022).
+
+Ahora que ya conocemos que es esta jerarquía y el como funciona la clasificación, ya nos es posible ubicar mi DFA, ya que, de acuerdo con Linz y Rodger (2022), “El adjetivo ‘determinista’ significa que el autómata tiene una y solo una opción en cualquier momento. Utilizamos los DFA para definir un cierto tipo de lenguaje, llamado lenguaje regular”. 
+
+Esta afirmación permite concluir que la solución propuesta, un Autómata Finito Determinista, clasifica como un lenguaje regular, y por tanto pertenece al nivel más básico de la jerarquía de Chomsky, el 3 *(LREG)*.
+
+Ahora para la notación *Big O* tenemos esta cita que nos lo explica:
+
+"Todo lenguaje regular puede ser reconocido por un autómata finito determinista en un tiempo proporcional a la longitud de la entrada. Por lo tanto:
+
+<img width="170" height="30" alt="image" src="https://github.com/user-attachments/assets/4e78a2d6-55e2-4368-ae39-cb6a3bfa17e2" /> "
+
+(Linz & Rodger, 2022).
+
+Esta notación significa que el conjunto de los *lenguajes regulares* está dentro del conjunto de problemas que pueden resolverse en *tiempo determinista lineal*.
+
+
+A lo que se refiere esta cita es que cualquier lenguaje regular, como el utilizado en este trabajo, puede ser procesado por un autómata finito determinista (DFA) en un tiempo que depende directamente de la longitud de la cadena de entrada, es decir, si la cadena tiene una longitud de 𝑛, el autómata realiza un número de operaciones proporcional a 𝑛, ya que procesa cada símbolo exactamente una vez y en cada paso solo existe una transición posible.
+
+Por lo tanto, podemos decir que la complejidad temporal asintótica del autómata construido es 𝑂(𝑛).
+
+#### Comparación y diferencias
 
 
 
