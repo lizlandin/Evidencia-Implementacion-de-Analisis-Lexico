@@ -169,6 +169,12 @@ Una vez cargado el programa principal, como se explicó en la sección anterior,
 El programa mostrará en la consola si cada cadena es Accepted o Rejected, lo cual nos permite verificar que el autómata funciona reconociendo correctamente el lenguaje definido.
 
 ## Análisis
+Esta última parte de la evidencia se enfocará en analizar el DFA construido y así poder determinar su complejidad temporal asintótica, para después compararla contra soluciones alternativas y explicar sus diferencias.
+
+Para definir la complejidad de mi autómata me basaré en la Jerarquía de Chomsky.
+
+Linz y Rodger (2022) explican en su libro "An Introduction to Formal Languages and Automata" que Noam Chomsky, considerado uno de los fundadores de la teoría de lenguajes formales, propuso una clasificación inicial de los lenguajes en cuatro tipos, numerados del 0 al 3, terminología que se ha mantenido a lo largo del tiempo y sigue utilizándose con frecuencia.
+En su jerrarquía los lenguajes de tipo 0 son aquellos generados por gramáticas irrestrictas, también conocidos como lenguajes recursivamente enumerables, el tipo 1 corresponde a los lenguajes sensibles al contexto, el tipo 2 a los lenguajes libres de contexto y el tipo 3 a los lenguajes regulares.
 
 
 
