@@ -87,7 +87,7 @@ Las expresiones regulares son una herramienta utilizada para definir patrones de
 
 Tabla proporcionada en clase, la cual fue usada como base para conocer la sintaxis:
 
-<img width="400" height="1200" alt="image" src="https://github.com/user-attachments/assets/0364f2b2-40af-48dd-948e-8ef0d3fb2f4e" />
+<img width="500" height="image" alt="image" src="https://github.com/user-attachments/assets/0364f2b2-40af-48dd-948e-8ef0d3fb2f4e" />
 
 
 Para construir la expresión regular seguí un proceso similar al utilizado durante el diseño del autómata, identificando primero los caracteres comunes entre las palabras del lenguaje, en este caso observé que todas las palabras comienzan con el carácter m, por lo que la expresión regular inicia con este símbolo. Posteriormente, se identificaron dos posibles continuaciones después de este primer carácter: la palabra misr y las palabras que comienzan con mu. Para poder representar estas dos posibilidades se utilizó el operador de ***OR ( | )***, el cual permite indicar diferentes opciones dentro de una expresión regular. Para las palabras que comienzan con mu, se agruparon las diferentes terminaciones posibles: 'addib, ad'dib, dir y shtamal. Estas opciones se incluyeron dentro de un mismo grupo utilizando nuevamente el operador ***"|"***. Para finalizar, añadí los símbolos ***^*** al inicio de la expresión y ***$*** al final. El primero indica que la cadena debe comenzar con el patrón especificado (m), mientras que el segundo señala que la cadena debe terminar en ese punto, es decir, finaliza en el momento que detecte la última letra de cada palabra aceptada, sin continuar leyendo más allá. Esto permitió garantizar que únicamente se acepten las cinco palabras asignadas y no cadenas similares, como misrr, que contiene una letra adicional al final.
@@ -210,7 +210,17 @@ Por lo tanto, podemos decir que la complejidad temporal asintótica del autómat
 
 La solución que propuse utiliza un autómata finito determinista (DFA), el cual, como mencionamos anteriormente, presenta una complejidad temporal de 𝑂(𝑛), porque procesa la cadena de entrada símbolo por símbolo realizando una única transición en cada paso.
 
-En comparación con otras alternativas, como los autómatas finitos no deterministas (NFA), los cuales implican que el autómata puede tener varias opciones de transición en lugar de una sola, esto quiere decir que en vez de establecer un movimiento único en cada situación, se permite un conjunto de posibles movimientos. De manera formal, esto se logra definiendo la función de transición de forma que su resultado sea un conjunto de estados posibles (Linz & Rodger, 2022).
+En comparación con otras alternativas, como los autómatas finitos no deterministas (NFA), los cuales implican que el autómata puede tener varias opciones de transición en lugar de una sola, refiriendose a que en vez de establecer un movimiento único en cada situación, se permite un conjunto de posibles movimientos. De manera formal, esto se logra definiendo la función de transición de forma que su resultado sea un conjunto de estados posibles (Linz & Rodger, 2022). Ambos modelos mencionados reconocen lenguajes regulares, por lo cual comparten la misma complejidad asintótica, sin embargo, el DFA resulta más eficiente a la hora de implementarlo debido a que no requiere considerar múltiples transiciones posibles para un mismo símbolo, sino que solo tiene un único camino de ejecución.
+
+Aparte de los ya mencionados (NFA y DFA) también existen todos los demás lenguajes en la jerarquia de Chomsky como se observa en la siguiente tabla:
+
+<img width="700" height="image" alt="image" src="https://github.com/user-attachments/assets/26d49ee2-6dcd-438d-b3f2-d08b98dc9f50" />
+
+En contraste, los lenguajes independientes del contexto (tipo 2), que son reconocidos por autómatas de pila, requieren algoritmos más complejos, 𝑂(𝑛^3),lo que implica un mayor costo computacional y para los niveles superiores, como los lenguajes sensibles al contexto (tipo 1) y los recursivamente enumerables (tipo 0), los problemas asociados pueden requerir tiempo exponencial o incluso ser indecidibles, lo que los hace considerablemente menos eficientes.
+
+
+
+
 
 
 
