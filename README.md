@@ -216,66 +216,11 @@ Aparte de los ya mencionados (NFA y DFA) también existen todos los demás lengu
 
 <img width="700" height="image" alt="image" src="https://github.com/user-attachments/assets/26d49ee2-6dcd-438d-b3f2-d08b98dc9f50" />
 
-En contraste, los lenguajes independientes del contexto (tipo 2), que son reconocidos por autómatas de pila, requieren algoritmos más complejos, 𝑂(𝑛^3),lo que implica un mayor costo computacional y para los niveles superiores, como los lenguajes sensibles al contexto (tipo 1) y los recursivamente enumerables (tipo 0), los problemas asociados pueden requerir tiempo exponencial o incluso ser indecidibles, lo que los hace considerablemente menos eficientes.
+En contraste, los lenguajes independientes del contexto (tipo 2), que son reconocidos por autómatas de pila, requieren algoritmos más complejos, 𝑂(𝑛^3),lo que implica un mayor costo computacional y para los niveles superiores, como los lenguajes sensibles al contexto (tipo 1) y los recursivamente enumerables (tipo 0), los problemas asociados pueden requerir tiempo exponencial o incluso ser indecidibles, lo que los hace considerablemente menos eficientes en comparación.
 
+Una vez aclarado esto, es importante señalar que no hemos visto en profundidad ningún lenguaje de la jerarquia de Chomsky mas allá de los regulares y no los abarcaremos en este curso. Sin embargo con el propósito de hacer las comparaciones se explicó un poco sobre sus diferencias en complejidad a la hora de su implementación. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Con esto podemos concluir que los lenguajes regulares, reconocidos por autómatas finitos deterministas, los cuales procesan en tiempo proporcional a la longitud de su entrada, es decir, 𝑂(𝑛), son el nivel más eficiente dentro de dicha jerarquía, por lo cual la solución propuesta en esta evidencia seria también la más eficiente, aunque no la única existente.
 
 
 ## Referencias 
