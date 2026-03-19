@@ -208,6 +208,9 @@ Por lo tanto, podemos decir que la complejidad temporal asintótica del autómat
 
 #### Comparación y diferencias
 
+La solución que propuse utiliza un autómata finito determinista (DFA), el cual, como mencionamos anteriormente, presenta una complejidad temporal de 𝑂(𝑛), porque procesa la cadena de entrada símbolo por símbolo realizando una única transición en cada paso.
+
+En comparación con otras alternativas, como los autómatas finitos no deterministas (NFA), los cuales implican que el autómata puede tener varias opciones de transición en lugar de una sola, esto quiere decir que en vez de establecer un movimiento único en cada situación, se permite un conjunto de posibles movimientos. De manera formal, esto se logra definiendo la función de transición de forma que su resultado sea un conjunto de estados posibles (Linz & Rodger, 2022).
 
 
 
