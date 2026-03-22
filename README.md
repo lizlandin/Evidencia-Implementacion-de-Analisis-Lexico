@@ -175,7 +175,7 @@ El programa mostrará en la consola si cada cadena es Accepted o Rejected, lo cu
 
 Esta última parte de la evidencia se enfocará en analizar el DFA construido y así poder determinar su complejidad temporal asintótica, para después compararla contra soluciones alternativas explicando sus diferencias.
 
-#### Complejidad temporal asintótica
+#### Complejidad espacial y temporal asintótica
 
 Para definir la complejidad de mi autómata me basaré en la Jerarquía de Chomsky.
 
@@ -205,6 +205,10 @@ Esta notación significa que el conjunto de los *lenguajes regulares* está dent
 A lo que se refiere esta cita es que cualquier lenguaje regular, como el utilizado en este trabajo, puede ser procesado por un autómata finito determinista (DFA) en un tiempo que depende directamente de la longitud de la cadena de entrada, es decir, si la cadena tiene una longitud de 𝑛, el autómata realiza un número de operaciones proporcional a 𝑛, ya que procesa cada símbolo exactamente una vez y en cada paso solo existe una transición posible.
 
 Por lo tanto, podemos decir que la complejidad temporal asintótica del autómata construido es 𝑂(𝑛).
+
+Por otra parte, la complejidad espacial del autómata puede analizarse principalmente por la forrma en la que funciona, ya que cuando se procesa una cadena, un DFA no necesita almacenar toda la entrada, sino únicamente el estado en el que se encuentra en ese momento.
+Este estado pertenece a un conjunto finito previamente definido de estados del autómata, es decir, un número limitado de posibles “posiciones” en las que puede encontrarse durante el procesamiento de la cadena, por lo que la cantidad de memoria requerida no depende del tamaño de la entrada, sino que esta permanece constante a lo largo de toda la ejecución.
+En otras palabras, independientemente de si la cadena es corta o muy larga, el autómata solo necesita recordar en qué estado está actualmente y que es lo que lee dicho estado para continuar con la siguiente transición, por ejemplo, al procesar una cadena como mushtamal, el autómata no almacena la cadena completa, sino que va leyendo símbolo por símbolo, primero "m" luego "u" y así sucesivamente actualizando únicamente su estado actual, descartando la información que haya leido anteriormente, por esto, la memoria utilizada no crece con la entrada, lo que implica que la complejidad espacial es constante, es decir, 𝑂(1).
 
 #### Comparación y diferencias
 
