@@ -75,6 +75,11 @@ Al finalizar este proceso, el autómata resultante fue el siguiente:
 
 <img width="2688" height="1038" alt="DFA drawio" src="https://github.com/user-attachments/assets/1319cdfd-98f6-4fd4-bca5-476c74788e35" />
 
+
+La manera en la que funciona es bastante sencilla, por ejemplo, para la palabra misr, el autómata va a comenzar en el estado inicial y al leer la letra "m" realiza la transición al siguiente estado definido para ese símbolo. Posteriormente, al leer "i", después "s" y finalmente "r", el DFA avanza por la secuencia de estados correspondiente hasta llegar a un estado de aceptación (doble círculo), lo que indica que la cadena pertenece al lenguaje. En cambio, si en cualquier punto del recorrrido aparece un símbolo distinto al esperado para continuar con esa palabra, el autómata deja de seguir la ruta hacia el estado de aceptación y es dirigido el estado trampa, en el cual permanecerá hasta terminar de leer la cadena, marcando así su rechazo. De esta manera, el diagrama no solo permite aceptar las palabras correctas, sino también asegurar que cualquier variación incorrecta sea descartada. 
+
+La implementación completa del autómata, así como ejemplos específicos de prueba, se presentan más adelante en el reporte.
+
 **Tabla de transiciones:**
 
 
