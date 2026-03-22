@@ -206,9 +206,10 @@ A lo que se refiere esta cita es que cualquier lenguaje regular, como el utiliza
 
 Por lo tanto, podemos decir que la complejidad temporal asintótica del autómata construido es 𝑂(𝑛).
 
-Por otra parte, la complejidad espacial del autómata puede analizarse principalmente por la forrma en la que funciona, ya que cuando se procesa una cadena, un DFA no necesita almacenar toda la entrada, sino únicamente el estado en el que se encuentra en ese momento.
-Este estado pertenece a un conjunto finito previamente definido de estados del autómata, es decir, un número limitado de posibles “posiciones” en las que puede encontrarse durante el procesamiento de la cadena, por lo que la cantidad de memoria requerida no depende del tamaño de la entrada, sino que esta permanece constante a lo largo de toda la ejecución.
-En otras palabras, independientemente de si la cadena es corta o muy larga, el autómata solo necesita recordar en qué estado está actualmente y que es lo que lee dicho estado para continuar con la siguiente transición, por ejemplo, al procesar una cadena como mushtamal, el autómata no almacena la cadena completa, sino que va leyendo símbolo por símbolo, primero "m" luego "u" y así sucesivamente actualizando únicamente su estado actual, descartando la información que haya leido anteriormente, por esto, la memoria utilizada no crece con la entrada, lo que implica que la complejidad espacial es constante, es decir, 𝑂(1).
+Por otra parte, la complejidad espacial del autómata puede analizarse principalmente por la forrma en la que este funciona, ya que cuando se procesa una cadena, un DFA no necesita almacenar toda la entrada, sino únicamente el estado en el que se encuentra en ese momento.
+Ese estado pertenece a un conjunto finito previamente definido de estados del autómata, es decir, un número limitado de posibles “posiciones” en las que puede encontrarse durante el procesamiento de la cadena, por lo que la cantidad de memoria requerida no depende del tamaño de la entrada, más bien permanece constante a lo largo de toda la ejecución.
+
+En otras palabras, independientemente de si la cadena es corta o muy larga, el autómata solo necesita recordar en qué estado está actualmente y que es lo que lee dicho estado para continuar con la siguiente transición, por ejemplo, al procesar una cadena como mushtamal, el autómata no almacena la cadena completa, sino que va leyendo símbolo por símbolo, primero "m" luego "u" y así sucesivamente actualizando únicamente su estado actual, descartando la información que haya leido anteriormente, por esto, la memoria utilizada no crece con la entrada, lo cual implica que la complejidad espacial es constante, es decir, 𝑂(1).
 
 #### Comparación y diferencias
 
