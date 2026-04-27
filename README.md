@@ -20,7 +20,7 @@ Para este proyecto se trabajará con cinco palabras específicas provenientes de
 
 **Alfabeto resultante:**
 
-<img width="260" height="34" alt="image" src="https://github.com/user-attachments/assets/39725b03-8318-431c-ab27-165805cda941" />
+<img width="260" height="image" alt="image" src="https://github.com/user-attachments/assets/39725b03-8318-431c-ab27-165805cda941" />
 
 
 ## Modelos 
@@ -31,7 +31,7 @@ De acuerdo con Hopcroft, Motwani y Ullman (2008),un autómata finito determinist
 
 Formalmente, un DFA consta de los siguientes 5 elementos:
 
-<img width="200" height="60" alt="image" src="https://github.com/user-attachments/assets/522d6d07-e08b-4f08-bcc0-1cb5e1cba83a" />
+<img width="200" height="image" alt="image" src="https://github.com/user-attachments/assets/522d6d07-e08b-4f08-bcc0-1cb5e1cba83a" />
 
 
 
@@ -39,7 +39,7 @@ Formalmente, un DFA consta de los siguientes 5 elementos:
 - **Alfabeto de entrada (Σ):** representa el conjunto de símbolos de entrada que el autómata puede leer, en otras palabras son los símbolos que forman el alfabeto del lenguaje que el autómata reconocerá.
 - **Función de transición (δ):** determina cómo cambia el autómata de un estado a otro al leer un símbolo de entrada.
 
-  <img width="110" height="45" alt="image" src="https://github.com/user-attachments/assets/7a885c90-9f8e-437e-95d9-ab55f2608c42" />
+  <img width="110" height="image" alt="image" src="https://github.com/user-attachments/assets/7a885c90-9f8e-437e-95d9-ab55f2608c42" />
 
   - *q*: estado
   - *a*: simbolo de entrada
@@ -73,7 +73,7 @@ Debido a que la palabra misr no comparte este mismo prefijo, decidí dejarla de 
 Al finalizar este proceso, el autómata resultante fue el siguiente:
 
 
-<img width="2688" height="1038" alt="DFA drawio" src="https://github.com/user-attachments/assets/1319cdfd-98f6-4fd4-bca5-476c74788e35" />
+<img width="2688" height="image" alt="DFA drawio" src="https://github.com/user-attachments/assets/1319cdfd-98f6-4fd4-bca5-476c74788e35" />
 
 
 La manera en la que funciona es bastante sencilla, por ejemplo, para la palabra misr, el autómata va a comenzar en el estado inicial y al leer la letra "m" realiza la transición al siguiente estado definido para ese símbolo. Posteriormente, al leer "i", después "s" y finalmente "r", el DFA avanza por la secuencia de estados correspondiente hasta llegar a un estado de aceptación (doble círculo), lo que indica que la cadena pertenece al lenguaje. En cambio, si en cualquier punto del recorrrido aparece un símbolo distinto al esperado para continuar con esa palabra, el autómata deja de seguir la ruta hacia el estado de aceptación y es dirigido el estado trampa, en el cual permanecerá hasta terminar de leer la cadena, marcando así su rechazo. De esta manera, el diagrama no solo permite aceptar las palabras correctas, sino también asegurar que cualquier variación incorrecta sea descartada. 
@@ -103,7 +103,7 @@ De esta manera se obtuvo la expresión regular:
 
 Al probarla con una página web de expresiones regulares proporcionada por nuestro profesor, comprobamos que en efecto solo recibe estas 5 palabras y rechaza todas las demás:
 
-<img width="96" height="658" alt="image" src="https://github.com/user-attachments/assets/98e7130b-e71a-4a47-a064-04e0e597d76d" />
+<img width="96" height="image" alt="image" src="https://github.com/user-attachments/assets/98e7130b-e71a-4a47-a064-04e0e597d76d" />
 
 ## Implementación
 Para la implementación del análisis léxico decidí utilizar el DFA, cuyo funcionamiento fue comprobado mediante un programa escrito en Prolog, el cual es el lenguaje de programación que se ha utilizado a lo largo del curso. A través de este programa se implementaron las transiciones del autómata y se realizaron pruebas con diferentes cadenas para verificar que el DFA aceptara únicamente las palabras válidas del lenguaje y rechazara aquellas que no pertenecieran a él.
@@ -112,9 +112,9 @@ Para crear este progrma se usó como base la siguiente estructura vista previame
 
 Esta código proporciona la forma general de representar un autómata finito en Prolog, definiendo las transiciones con "move", los estados de aceptación con "accepting_state" y un predicado principal que se encarga de recorrer la lista de símbolos de entrada, simulando así el comportamiento del autómata.
 
-<img width="215" height="177" alt="Screenshot 2026-03-11 at 7 17 59 p m" src="https://github.com/user-attachments/assets/01b41520-68c0-480e-854c-bf6b0b4b7422" />
+<img width="215" height="image" alt="Screenshot 2026-03-11 at 7 17 59 p m" src="https://github.com/user-attachments/assets/01b41520-68c0-480e-854c-bf6b0b4b7422" />
 
-<img width="392" height="224" alt="Screenshot 2026-03-11 at 7 18 07 p m" src="https://github.com/user-attachments/assets/59c94053-8c39-4ec4-9a26-70e66090d013" />
+<img width="392" height="image" alt="Screenshot 2026-03-11 at 7 18 07 p m" src="https://github.com/user-attachments/assets/59c94053-8c39-4ec4-9a26-70e66090d013" />
 
 Gracias a esto, la creación del código fue relativamente fácil, solo quedó que adaptarlo a mi autómata, lo cual resultó un poco laborioso debido a la gran cantidad de transiciones presentes, tomando en consideración que en Prolog cada transición debe declararse de forma individual.
 
@@ -133,9 +133,9 @@ Para ejecutar el programa se deben seguir las siguientes instrucciones:
   - Por ejemplo:
     - parseDFA([m,u,s,h,t,a,m,a,l]).
   - **Nota:**
-    - En el caso del símbolo **' (comilla simple)**, es necesario escribirlo de la siguiente manera: <img width="28" height="30" alt="image" src="https://github.com/user-attachments/assets/311af125-e351-4601-8f2d-29fc721923fb" />
+    - En el caso del símbolo **' (comilla simple)**, es necesario escribirlo de la siguiente manera: <img width="28" height="image" alt="image" src="https://github.com/user-attachments/assets/311af125-e351-4601-8f2d-29fc721923fb" />
 
-    - Por ejemplo, para poder probar una cadena que contenga este símbolo se debe escribir de esta forma: <img width="300" height="100" alt="image" src="https://github.com/user-attachments/assets/5a19f006-39b2-49b1-b507-68031e78f6f7" />
+    - Por ejemplo, para poder probar una cadena que contenga este símbolo se debe escribir de esta forma: <img width="300" height="image" alt="image" src="https://github.com/user-attachments/assets/5a19f006-39b2-49b1-b507-68031e78f6f7" />
 
 
 Cada elemento de la lista representará un carácter de la cadena que se quiere analizar. El programa los evaluará siguiendo las transiciones ya definidas en el autómata y decidirá si pertenece o no al lenguaje.
@@ -156,9 +156,9 @@ o en caso de rechazo:
 ## Pruebas
 Estas son las palabras que probaremos en el archivo "test_automataDune.pl" :
 
-<img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/1c5976ec-4329-437b-a790-45e737acd72a" />
+<img width="600" height="image" alt="image" src="https://github.com/user-attachments/assets/1c5976ec-4329-437b-a790-45e737acd72a" />
 
-<img width="600" height="1200" alt="image" src="https://github.com/user-attachments/assets/0cf7f78e-427f-4363-9b51-37fbecac1e94" />
+<img width="600" height="image" alt="image" src="https://github.com/user-attachments/assets/0cf7f78e-427f-4363-9b51-37fbecac1e94" />
 
 **Como ejecutar el programa**
 
